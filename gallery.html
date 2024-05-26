@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8"><!--Declaring the character encoding-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Linking Google fonts for the font customization-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Gallery Page</title>
+
+    <style>
+        body {
+            background-color: #f3f3f3;
+        }        
+        body::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
+        }
+        .content1 {
+            padding-top: 150px;
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #topic {    
+            font-size: 36px;     /* Choosing the font size for topic*/
+            text-align: center;
+            position: relative;  /* Positioning of the topic*/
+            line-height: 80px;
+        }
+        #topic::after {
+            content: '';
+            background: #ffc107;
+            width: 80px;
+            height: 5px;  /* Height of the line*/
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;    /*Bottom position*/
+            left: 50%;   /* Left position*/
+            transform: translateX(-50%);   /* Centers the line horizontaly*/
+        }
+
+        /* Styling the image container*/
+        .img-container{
+            display: flex;
+        }
+        /*Styling the Image class*/
+        .Images{
+            padding: 100px 0;
+            justify-items: center;
+            display: flex;
+            overflow-x: auto; /*Enables scrolling*/
+            white-space: nowrap; /*Will remain in a single line and will not wrap to the next line*/
+        }
+        .Images::-webkit-scrollbar {
+            display: none; /*Hides the scroll bar*/
+        }
+
+        /*Styling the images inside the Image class*/
+        .Images img{
+            display:inline-block; /*The images will be inline*/
+            border-radius: 30px ;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .Images img:hover{ /*Will blur and and enlarge a bit when hovered*/
+            opacity: 0.86;
+            transform: scale(1.1);
+        }
+
+
+        /*Styling the popup section*/
+        .popup{
+            display:none; /*Hidden by default*/
+            position: fixed;
+            z-index: 1; /*sits on top*/
+            padding-top:50px; /*sets the location of the box*/
+            left:0;
+            top:0;
+            width: 100%; 
+            height: 100%;
+            overflow:auto; /*It will enable scrolling if needed*/
+            background-color: #f3f3f3; 
+        }
+
+        /*Styling the popup content section*/
+        .popup-content{
+            left: 35px;
+            position: relative; /*Able to position the element relative to its default position*/
+            display: block;
+            top: 10px;
+        }
+        /*Styling the enlarged images in the popup content*/
+        #imgAll{
+            height: 80%;
+            width: 95%;
+            margin-top: 60px;
+            border-radius: 20px;
+            border: 3px solid #ffc107; /*Curves the image in its corners*/
+        }
+        /*Styles the caption of the englarged images*/
+        #caption{
+            position: absolute; /*allows to set the element to the position where we need it to within the block*/
+            bottom: 50px;
+            right: 0px;
+            padding: 30px;
+            color: #ffc107;
+            background-color: #0b0c0d;
+        }
+        /*Animation for popup content and caption*/
+        .popup-content, #caption{
+        animation: zoom; /*Applying the "zoom" animation */
+        animation-duration: 0.6s; /*Setting the duration of the animation to 0.6 seconds */
+
+        }
+
+        /*Zoom animation keyframes*/
+        @keyframes zoom{
+            from{transform:scale(0)} /*First the popup window is invisible*/
+            to{transform: scale(1)}  /*It transform to its oriinal scale in 0.6s*/
+        }
+
+        /*Styling the close button*/
+        .close{ 
+            position: absolute;
+            top: 120px;
+            right: 55px;
+            color: #ffc107;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 99;
+
+        }
+
+        /*Styles the hover and focus states of the close button*/
+        .close:hover,
+        .close:focus{
+            color: #ff000d;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /*Media query for smaller screens*/
+        @media only screen and (max-width: 700px){
+            .popup-content{
+                width: 100%; /*Adjusts width for smaller screens*/
+            }
+        }
+
+        /*Styles for the customization panel*/
+        #customization-panel{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px; 
+            border: 2px solid #ffc107;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /*The styles for the h3 inside the customization panel */
+        #customization-panel h3{
+            margin-bottom: 10px;
+        }
+
+        /*The styles for the labels inside the customization panel */
+        #customization-panel .panell{
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <!--Navigation Bar-->
+        <nav id="navbar">
+        <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+            <ul>
+            <li class="hover-effect active"><a href="gallery.html">GALLERY</a></li>
+            <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+            <li class="hover-effect"><a href="team.html">TEAM</a></li>
+            <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+            <li class="hover-effect"><a href="Sitemap.html">SITEMAP</a></li>
+            <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Scroll Up Button-->
+    <div id="scrollUpBtn" class="scroll-up-btn">
+    <img src="Svg/arrow-up-solid.svg" alt="Scroll Up">
+    </div>
+
+    <div class="content1">
+        <h1 id="topic">Welcome to our Gallery</h1>
+        <br>
+        <p>At NutriZenith, we believe everyone deserves access to nutritious food. <br>Through our gallery, we want to showcase the journey of food – from seed to plate – and how we're working towards achieving Zero Hunger.</p>
+    </div>
+
+    <!--Image container fr displaying gallery images-->
+    <div class = "img-container">
+        <div class = "Images">
+            <!--The gallery images with its respective descriptions-->
+            <img src = "Images/img-1.jpg" alt = "image 1" data-src = "Images/img-1.jpg" data-desc="A chorus of bright smiles erupts as a group of children clutch their bags of dry food. Sunlight dances on colorful packaging held proudly in small hands. Gone are empty bellies, replaced by the promise of a nourishing meal. With eyes sparkling and teeth bared, they huddle close, a spontaneous portrait of hope and gratitude. The picture captures the simple joy of a full stomach, a victory in the fight against hunger.">
+            <img src = "Images/img-2.jpg" alt = "image 2" data-src = "Images/img-2.jpg" data-desc="A scene of resilience unfolds. A weathered woman, her back etched with the lines of a hard life, balances a box of food on her head. Her worn dress hints at the struggle, yet her determined stride speaks of perseverance. A man, his hand gently steadying the box, offers a silent act of kindness. This image captures the spirit of Zero Hunger, where communities come together to ensure everyone receives life-sustaining food.">
+            <img src = "Images/img-3.jpg" alt = "image 3" data-src = "Images/img-3.jpg" data-desc="A gaunt little girl stands alone, her thin arms raised in a plea. Her tattered dress hangs loosely, emphasizing her empty stomach. Though her eyes hold a desperate hunger, a flicker of hope remains. This image is a stark reminder of the fight for Zero Hunger, where even the smallest beings struggle for basic sustenance.">
+            <img src = "Images/img-4.jpg" alt = "image 4" data-src = "Images/img-4.jpg" data-desc="In a brightly lit room, a line of hope takes shape. Four volunteers, a mix of ages and backgrounds, work together with focused determination. Cans and boxes of food are carefully placed in sturdy cardboard containers, each one a small victory against hunger. The volunteers' expressions reveal a mix of effort and compassion, united in their mission to fill these boxes and fill empty bellies. This scene embodies the heart of Zero Hunger – a collaborative effort to build a world where everyone has access to nutritious food.">
+            <img src = "Images/img-5.jpg" alt = "image 5" data-src = "Images/img-5.jpg" data-desc="A close-up reveals two hands. One, wrinkled and worn, stretches out a cardboard box. The other, smooth and unmarked, reaches down to receive it. A silent exchange, a flicker of hope passing between them. This image, focused solely on the hands, emphasizes the human connection at the core of Zero Hunger – a basic act of compassion bridging the gap between those who have and those who have not.">
+            <img src = "Images/img-6.jpg" alt = "image 6" data-src = "Images/img-6.jpg" data-desc="A splash of vibrant color cuts through the dusty background of a bustling slum. A girl, maybe eight, beams at the camera, a half-eaten chocolate bar held proudly in one hand. Her clothes are worn, but her smile is wide, revealing a hint of chocolate around her teeth. Her eyes, sparkling with mischief and delight, seem to say, &quot;This is a taste of a world without hunger, and I hope there's enough for everyone&quot;.">
+            <img src = "Images/img-7.jpg" alt = "image 7" data-src = "Images/img-7.jpg" data-desc="The midday sun beats down on a deserted street. A kind-faced man kneels beside an elderly gentleman lying on the hot asphalt. Concern etched on his brow, the younger man gently pours cool water from his bottle onto the elder's lips. The older man, eyes closed in weakness, reaches up feebly, a single drop glistening on his weathered hand. This simple act of humanity offers a lifeline in a world where even basic needs can be scarce.">
+            <img src = "Images/img-8.jpg" alt = "image 8" data-src = "Images/img-8.jpg" data-desc="Saffron robes stand out against a backdrop of eager faces. A monk, his expression serene, reaches into a large, open sack of food packets. A sea of outstretched hands, mostly small and bare, rise towards him. Anticipation hangs in the air, a silent plea for sustenance. The monk, a vessel of compassion in a world grappling with hunger, prepares to meet their needs, one packet at a time.">
+            <img src = "Images/img-9.jpg" alt = "image 9" data-src = "Images/img-9.jpg" data-desc="A warm smile crinkles the eyes of a young volunteer as they carefully pour a clear drink into a plastic cup. Their focus is complete, ensuring a refreshing offering. Behind them, neatly stacked boxes, their labels hinting at nutritious contents, stand ready for distribution. The scene radiates a quiet hope, a testament to the tireless efforts of those combating hunger, one drink, one box at a time.">
+            <img src = "Images/img-10.jpg" alt = "image 10" data-src = "Images/img-10.jpg" data-desc="Sunlight streams through a makeshift dining hall, illuminating a row of children. They sit patiently, hands clasped in their laps or resting on the worn table. Faces, some etched with past hunger, now hold a quiet expectancy. A collective gaze is fixed on the serving counter, anticipation building with each passing moment. The promise of a full belly hangs in the air, a testament to a world working towards zero hunger.">
+        </div> 
+    </div>
+
+    <!--Popup window for displaying the images and the details of it-->
+    <div id = "popupWindow" class = "popup">
+        <span class = "close">&times;</span> <!--The Close button-->
+        <img class = "popup-content" id = "imgAll" alt="Enlarged Image" src=""><!--The class popup content is used to display the enlarged image and the
+        the ID imgAll is used to handling the click functions in displaying the enlarged images through Javascript-->
+
+        <div id = "caption"></div><!--The image decriptions-->
+    </div>
+
+    <!--The customization panel for user settings-->
+    <div id = "customization-panel">
+        <h3>Customization</h3><!--The title of the customization panel-->
+        <div class="panell">
+        <label for = "color-picker">Choose a Background Colour for the extended view: </label><!--Label for color picker-->
+        <input type = "color" id = "color-picker" value = "#f3f3f3"><br><!--Colour picker for the background colour of the enlarged content -->
+        </div>
+
+        <div class="panell">
+        <label for = "font-select">Choose a Font for the extended view: </label><!--The label for font selection-->
+        <select id = "font-select">
+            <option value = "montserrat">Montserrat</option>
+            <option value = "Arial">Arial</option>
+            <option value = "Times New Roman">Times New Roman</option>
+            <option value = "Verdana">Verdana</option>
+            <option value = "Georgia">Georgia</option>
+            <option value = "Courier New">Courier New</option>
+        </select>
+        </div>
+    </div>
+
+
+ <!--Footer-->
+ <footer>
+    <section class="footer-content">
+      <div class="footer-top">
+        <img class="logo" src="Images/logo.png" alt="logo">
+        <div class="website">
+          <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+        </div>
+        <div class="page-editor">
+          <p>Designed by <span><a href="editor-s4.html" target="_blank">Shilma</a></span></p>
+        </div>
+        <nav>
+          <ul>
+            <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+            <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+            <li class="hover-effect"><a href="team.html">TEAM</a></li>
+            <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+            <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+            <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="separator"></div>
+    <div class="footer-bottom">
+      <p>&copy; NUTRIZENITH</p>
+      <!--Socials-->
+      <ul class="socials">
+        <li class="hover-social">
+          <a href="https://www.facebook.com/SustDev" target="_blank"><img src="Svg/facebook.svg" alt="facebook"></a>
+        </li>
+        <li class="hover-social">
+          <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="Svg/youtube.svg" alt="youtube"></a>
+        </li>
+        <li class="hover-social">
+          <a href="https://twitter.com/SustDev" target="_blank"><img src="Svg/x-twitter.svg" alt="x-twitter"></a>
+        </li>
+        <li class="hover-social">
+          <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="Svg/instagram.svg" alt="instagram"></a>
+        </li>
+      </ul>
+    </div>
+</section>
+  </footer>
+
+  <script>
+    //Retrieving the popup window element by its ID
+var popup = document.getElementById("popupWindow");
+
+// Selecting all the thumbnail images within the .Images container
+var images = document.querySelectorAll('.Images img');
+
+//Retrieving the image element where the full sized image will be displayed
+var popupImg = document.getElementById("imgAll");
+
+//Retrieving the caption element where the image description willl be displayed
+var popupCaption = document.getElementById("caption");
+
+
+//It iterates over each thumbnail image and then assigns the onlick fucntion
+images.forEach(function(img){
+    img.onclick = function(){
+        popup.style.display = "block";//to make the image visible by displaying the popup window
+        
+        //Setting the source of the full-sized image
+        popupImg.src = this.getAttribute('data-src');
+        
+        // Setting the description of the image
+        popupCaption.innerHTML = this.getAttribute('data-desc');
+    }
+});
+
+//Returns the close button element
+//[0] used to select the first element
+var span = document.getElementsByClassName("close")[0];
+
+//assigns an event handler for the onlick event, when it is clicked the function is executed
+span.onclick = function(){
+    popup.style.display = "none";//hiding it from the view, effectively closes the popup window, it disappears from the user's view
+}
+
+//Retrieving the color picker and font selector elements
+var colorPicker = document.getElementById("color-picker");
+var fontSelect = document.getElementById("font-select");
+
+var popupCaption = document.getElementById("caption");
+
+//Adding an event listener for changes in the colour picker
+colorPicker.addEventListener("change", function(){
+    
+    //Retrieving the selected colour value
+    var selectedColour = colorPicker.value;
+
+    //Setting the background color of the popup window
+    popup.style.backgroundColor = selectedColour;
+})
+
+//Adding an event listener for the changes in the font selector
+fontSelect.addEventListener("change", function(){
+    
+    //Retrieving the selected font value
+    var selectedFont = fontSelect.value;
+
+    //Setting the font family for the description inside the popup window
+    popupCaption.style.fontFamily = selectedFont;
+})
+  </script>
+
+  <!--Script-->
+<script>
+    window.addEventListener("scroll", function() {
+      var navbar = document.getElementById("navbar");
+      if (window.pageYOffset > 0) {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; 
+      } else {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; 
+      }
+  });
+  
+  const scrollUpBtn = document.getElementById('scrollUpBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { 
+      scrollUpBtn.classList.add('show');
+    } else {
+      scrollUpBtn.classList.remove('show');
+    }
+  });
+  scrollUpBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
+</body>
+</html>

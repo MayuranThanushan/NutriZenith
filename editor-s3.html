@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <style>
+        .top-layer {
+            background-color: #0b0c0d;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            padding: 32px;
+            align-items: center;
+            height: 250px;
+            font-size: larger;
+        }
+        .top-layer img {
+            object-fit: cover;
+            width: 300px;
+            margin-top: 280px;
+            border: 5px solid #0b0c0d;
+        }
+        .heading {
+            align-items: center;
+            flex-direction: column;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        .bottom-layer {
+            flex-direction: column;
+            padding-bottom: 72px;
+        }
+        .card {
+            margin-left: 350px;
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+        }
+        .text {
+            padding: 0 26px;
+            padding-top: 26px;
+            width: 600px;
+        }
+        .text h2 {
+            padding: 5px 0;
+        }
+        /* Media */
+        @media (max-width: 900px) {
+            .bottom-layer {
+                margin-top: 140px;
+            }
+            .card {
+                margin: 20px;
+            }
+        }
+        @media (max-width: 720px) {
+            .top-layer img {
+                width: 200px;
+                margin-top: 220px;
+            }
+            .top-layer {
+                font-size: small;
+            }
+        }
+        @media (max-width: 600px) {
+            .card {
+                flex-direction: column;
+            }
+            .top-layer img {
+                display: none;
+            }
+            .heading {
+                margin: auto;
+                margin-top: 120px;
+            }
+            .bottom-layer {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+      <!--Header-->
+      <header>
+        <!--Navigation Bar-->
+        <nav id="navbar">
+          <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+            <ul>
+              <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+              <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+              <li class="hover-effect"><a href="team.html">TEAM</a></li>
+              <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+              <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+              <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Scroll Up Button-->
+    <div id="scrollUpBtn" class="scroll-up-btn">
+      <img src="Svg/arrow-up-solid.svg" alt="Scroll Up">
+    </div>
+
+    <main>
+        <section class="top-layer">
+            <img src="Images/Nisini.png" alt="Editor-s2">
+            <div class="heading">
+                <h1>Nisini Somasekara</h1>
+                <h3>w2051818 | 20231060</h3>
+                <br>
+                <p>Student 3</p>
+            </div>
+        </section>
+        <section class="bottom-layer">
+            <div class="card">
+                <div class="text">
+                    <h2>User Profile</h2>
+                    <p>Created a webpage to guide the user through a set of questions throughout prompts and to display the information. Used CSS to style the necessary content.</p>
+                    <br>
+                    <a href="profile.html"><button><span>User Profile</span></button></a>   
+                </div>
+                <div class="text">
+                    <h2>Team Page</h2>
+                    <p>A team page to show the members was created using html amd css. Shows the details of members such as name, and student role when. Visibility changes and hover effects were ad added.<p>
+                    <br>
+                    <a href="team.html"><button><span>Team Page</span></button></a>   
+                </div>
+                </div>
+
+                <div class="card">
+                <div class="text">
+                    <h2>Content Page</h2>
+                    <p>A page related to the main topic discussing about the future plans to achieve the goal zero hunger was created. Used CSS javascript and used images to make the page visually appealing and interactive.</p>
+                    <br>
+                    <a href="content-S3.html"><button><span>Content Page</span></button></a>   
+                </div>
+                <div class="text">
+                    <h2>Editor Page</h2>
+                    <p>A editor page to display team members' name, roles, completed tasks and a description about the tasks.</p>
+                    <br>
+                    <a href="editor-s3.html"><button><span>Editor Page</span></button></a>   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+        <section class="footer-content">
+            <div class="footer-top">
+            <img class="logo" src="Images/logo.png" alt="logo">
+            <div class="website">
+                <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+            </div>
+            <div class="page-editor">
+                <p>Designed by <span><a href="editor-s3.html" target="_blank">Nisini</a></span></p>
+            </div>
+            <nav>
+                <ul>
+                <li class="hover-effect "><a href="gallery.html">GALLERY</a></li>
+                <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                <li class="hover-effect"><a href="team.html">TEAM</a></li>
+                <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+                <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="separator"></div>
+        <div class="footer-bottom">
+            <p>&copy; NUTRIZENITH</p>
+            <!--Socials-->
+            <ul class="socials">
+            <li class="hover-social">
+                <a href="https://www.facebook.com/SustDev" target="_blank"><img src="Svg/facebook.svg" alt="facebook"></a>
+            </li>
+            <li class="hover-social">
+                <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="Svg/youtube.svg" alt="youtube"></a>
+            </li>
+            <li class="hover-social">
+                <a href="https://twitter.com/SustDev" target="_blank"><img src="Svg/x-twitter.svg" alt="x-twitter"></a>
+            </li>
+            <li class="hover-social">
+                <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="Svg/instagram.svg" alt="instagram"></a>
+            </li>
+            </ul>
+        </div>
+    </section>
+    </footer>
+
+
+<script>
+window.addEventListener("scroll", function() {
+    var navbar = document.getElementById("navbar");
+    if (window.pageYOffset > 0) {
+        navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+    } else {
+        navbar.style.backgroundColor = "rgba(0, 0, 0, 1)";
+    }
+});
+const scrollUpBtn = document.getElementById('scrollUpBtn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { 
+    scrollUpBtn.classList.add('show');
+    } else {
+    scrollUpBtn.classList.remove('show');
+    }
+});
+scrollUpBtn.addEventListener('click', () => {
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey Towards Zero Hunger</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <style>
+         main {
+            display: block;
+            background: #f3f3f3;
+        }
+        .top {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+        .top h1 {
+            color: #fff;
+            font-size: 46px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            text-align: center;
+        }
+        .top img {
+            width: 1530px;
+            height: 349px;
+        }
+        .gradient {
+            position: relative;
+        }
+
+        .gradient img {
+            display: block;
+            width: 100%;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        }
+        .author {
+            display: flex;
+            flex-direction: row;
+            margin-top: 18px;
+            margin-left: 28px;
+            align-items: center;
+        }
+        .author img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+        .page {
+            padding: 0 156px;
+        }
+        .block {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 12px;
+            line-height: 1.7;
+            overflow: hidden;
+            margin-bottom: 32px;
+            position: relative;
+            box-shadow: 0 10px 15px -3px rgba(255, 193, 7, 0.4), 0 4px 6px -2px rgba(255, 193, 7, 0.8);
+        }
+        .para {
+            padding: 18px 0;
+        }
+        .para h2 {
+            font-size: 32px;
+            padding-top: 48px;
+            padding-bottom: 32px;
+        }
+        .para p {
+            line-height: 26px;
+        }
+
+        /* Content Gallery */
+        .content-gallery {
+            text-align: center;
+            justify-content: center;
+            color: #000;
+            padding: 48px;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+        .grid1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .grid2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .group {
+            margin: 3% 6%;
+            width: 38%;
+            position: relative;
+        }
+
+        .card {
+            font-size: 12px;
+            line-height: 2;
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card img {
+            border-radius: 28px;
+            transition: transform 0.2s ease-in-out;
+            width: 100%;
+            height: auto;
+        }
+
+        .card:hover {
+            border: 4px solid #ffc107;
+        }
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .text-overlay {
+            position: absolute;
+            width: 100%;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            text-align: left;
+            padding: 10px;
+            padding-left: 40px;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .text-overlay h2 {
+            line-height: 36px;
+            font-size: 23px;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .text-overlay p {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+        }
+        /*media*/
+        @media (max-width: 1410px) {
+            .text-overlay h2 {
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+            .text-overlay p {
+                font-size: 18px; 
+            }
+        }
+        @media (max-width: 1260px) {
+            .text-overlay h2 {
+                font-size: 14px;
+                line-height: 20px; 
+            }
+
+            .text-overlay p {
+                font-size: 8px;
+            }
+        }
+        @media (max-width: 1000px) {
+            .page {
+                padding: 0 30px;
+            }
+            .top h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!--Header-->
+     <header>
+        <!--Navigation Bar-->
+        <nav id="navbar">
+          <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+            <ul>
+              <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+              <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+              <li class="hover-effect"><a href="team.html">TEAM</a></li>
+              <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+              <li class="hover-effect"><a href="Sitemap.html">SITEMAP</a></li>
+              <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Scroll Up Button-->
+    <div id="scrollUpBtn" class="scroll-up-btn">
+      <img src="Svg/arrow-up-solid.svg" alt="Scroll Up">
+    </div>
+
+    <main>
+        <div class="top">
+            <div class="gradient">
+                <img src="Images/header-s2.jpg" alt="">
+                <div class="gradient-overlay"></div>
+            </div>
+            <h1>Our Journey towards Zero Hunger:<br>Past Initiatives and Achievements<br><br></h1>
+        </div>
+        <div class="page">
+        <div class="block">
+            <section class="para">
+                <h2>Our Commitment to Ending Hunger</h2>
+                <p>As an organization dedicated to addressing and tackling hunger and food insecurity, over the years, we have implemented a variety of initiatives aimed at alleviating hunger and promoting sustainable food systems.</p>
+            </section>
+            <section class="para">
+                <h2>Past Initiatives and Programs</h2>
+                <p><b>Food Distribution:</b> We provide food aid to communities during crises like natural disasters and conflicts.</p>
+                <br>
+                <p><b>Capacity Building:</b> We empower local communities and farmers with training and resources to improve agriculture and increase food production.</p>
+                <br>
+                <p><b>Nutrition Education:</b> We run campaigns and workshops to promote healthy eating habits and combat malnutrition.</p>
+                <br>
+                <p><b>Advocacy:</b> We push for policy changes to address hunger's root causes like poverty and inequality at all levels.</p>
+            </section>
+            <section class="para">
+                <h2>Achievements and Impact</h2>
+                <p>Through our collective efforts, we have achieved significant milestones in the fight against hunger:</p>
+                <br>
+                <p><b>Improved Food Security:</b> Many communities have experienced improved access to nutritious food, leading to enhanced food security and reduced rates of malnutrition.</p>
+                <br>
+                <p><b>Empowered Communities:</b> Our initiatives have empowered communities to take control of their food systems, build resilience, and adapt to changing environmental and economic conditions.</p>
+                <br>
+                <p><b>Sustainable Practices:</b> We support farming methods that boost food production while also safeguarding the environment and preserving resources for the future.</p>
+            </section>
+            <section class="para">
+                <h2>Lessons Learned and Continuing the Journey</h2>
+                <p>While we celebrate our past achievements we remain committed to building on our successes, learning from our challenges, and working collaboratively with partners to create a world where no one goes hungry.</p>
+            </section>
+            <br>
+            <br>
+            <hr>
+            <div class="author">
+                <img src="Images/author2.png" alt="Author2">
+                <p>By Mayuran Thanushan</p> 
+             </div>
+        </div>
+        </div>
+
+        <!--Content Gallery-->
+      <section class="content-gallery">
+        <div class="content-container">
+            <h1>Continue Reading:</h1>
+            
+            <div class="grid1">
+            <div class="group">
+                <a href="content-S1.html">
+                  <div class="card">
+                    <div class="text-overlay">
+                        <h2>Understanding Zero Hunger: <br> A Call to Action</h2>
+                        <p>By Aqil</p>
+                    </div>
+                        <img src="Images/content-s1.jpg" alt="content-s1">
+                  </div>
+                </a>
+            </div>
+
+            <div class="group">
+                <a href="content-S3.html">
+                  <div class="card">
+                    <div class="text-overlay">
+                        <h2>Shaping the Future of Food Security: <br> UN's Vision and Our Role
+                        </h2>
+                        <p>By Nisini</p>
+                      </div>
+                        <img src="Images/content-s3.jpg" alt="content-s3">
+                  </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid2">
+          <div class="group">
+            <a href="content-S4.html">
+              <div class="card">
+                <div class="text-overlay">
+                    <h2>Innovative Approaches and Technologies: <br> Advancing Sustainable Agriculture</h2>
+                    <p>By Shilma</p>
+                  </div>
+                    <img src="Images/content-s4.jpg" alt="Content-s4">
+              </div>
+            </a>
+          </div>
+        </div>
+      
+              
+          </div>
+      </section>
+    </main>
+
+    
+    <!--Footer-->
+    <footer>
+        <section class="footer-content">
+            <div class="footer-top">
+            <img class="logo" src="Images/logo.png" alt="logo">
+            <div class="website">
+                <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+            </div>
+            <div class="page-editor">
+                <p>Designed by <span><a href="editor-s2.html" target="_blank">Thanushan</a></span></p>
+            </div>
+            <nav>
+                <ul>
+                <li class="hover-effect "><a href="gallery.html">GALLERY</a></li>
+                <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                <li class="hover-effect"><a href="team.html">TEAM</a></li>
+                <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                <li class="hover-effect"><a href="Sitemap.html">SITEMAP</a></li>
+                <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="separator"></div>
+            <div class="footer-bottom">
+            <p>&copy; NUTRIZENITH</p>
+            <!--Socials-->
+            <ul class="socials">
+            <li class="hover-social">
+                <a href="https://www.facebook.com/SustDev" target="_blank"><img src="Svg/facebook.svg" alt="facebook"></a>
+            </li>
+            <li class="hover-social">
+                <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="Svg/youtube.svg" alt="youtube"></a>
+            </li>
+            <li class="hover-social">
+                <a href="https://twitter.com/SustDev" target="_blank"><img src="Svg/x-twitter.svg" alt="x-twitter"></a>
+            </li>
+            <li class="hover-social">
+                <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="Svg/instagram.svg" alt="instagram"></a>
+            </li>
+            </ul>
+        </div>
+    </section>
+    </footer>
+
+
+    <!--Script-->
+    <script>
+    window.addEventListener("scroll", function() {
+        var navbar = document.getElementById("navbar");
+        if (window.pageYOffset > 0) {
+            navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; // Adjust the transparency as needed
+        } else {
+            navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; // Initial color when at the top
+        }
+    });
+
+    const scrollUpBtn = document.getElementById('scrollUpBtn');
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { 
+        scrollUpBtn.classList.add('show');
+    } else {
+        scrollUpBtn.classList.remove('show');
+    }
+    });
+    scrollUpBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash Animation</title>
+  <style>
+    * {
+      font-family:  'montserrat', system-ui, 'Segoe UI', Verdana, Geneva, Calibri;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .logo {
+      width: 50%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .mission {
+      text-align: center;
+      color: #fff;
+      font-size: 32px;
+      font-weight: bold;
+      padding-top: 100px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+ 
+    .loading-bar {
+      margin-top: 20px;
+      width: 200px;
+      height: 30px;
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1s ease 1s forwards; 
+    }
+
+    .loading-progress {
+      width: 0;
+      height: 30px;
+      background-color: #ffc107; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: progress 1s ease-in-out 2.5s forwards; 
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes progress {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <div class="mission">Nutrizenith: Nourishing People, Nuturing Planet. <br><br>Aqil Sufi Ismail | Mayuran Thanushan | Nisini Agampodi | Shilma Rifaideen</div>
+    <div class="loading">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const logoContainer = document.querySelector('.logo-container');
+        logoContainer.style.opacity = '1';
+        }, 0);
+
+        setTimeout(() => {
+          const mission = document.querySelector('.mission');
+          mission.style.opacity = '1';
+          const loading = document.querySelector('.loading');
+        }, 1000);
+          
+          setTimeout(() => {
+              // Redirect to home.html after 4 seconds
+              window.location.replace('home.html');
+            }, 4000);
+    });
+  </script>
+</body>
+</html>

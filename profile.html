@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Profile</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        
+        <!--CSS-->
+        <style>
+            h2,h4{
+                text-align: center;
+                color: black;  
+            }
+
+            .container {
+                background-image: linear-gradient(rgba(255,255,255,0.8),rgba(0,0,0,0.7)),url('Images/hungerz.jpg');
+                background-size: cover; /* Makes the background image covers entire container */
+                background-position: center;
+                max-width: 50%;
+                margin: 50px auto;
+                margin-top:0px;
+                padding: 20px;    /* padding of the container*/
+                border: 2px solid black; /* Border style */
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.808);   /* Background color with opacity */
+                box-shadow: 0 10px 20px -5px rgba(255, 193, 7, 0.6), 0 4px 10px -3px rgba(255, 193, 7, 1);
+                font-weight:bolder;
+                font-size:x-large;
+            }
+
+            .prompt {
+                margin-bottom: 10px;    
+            }
+
+            .prevButton,
+            .nextButton,
+            .skipButton {
+                display: inline-block;
+                font-size: 12px; /* Adjusted font size for smaller buttons */
+                margin-right: 20px; 
+                width:auto;
+                margin-top: 20px; /* Add space between input field and button */
+            }
+            #progress-bar-container {
+                width: 50%;
+                border: 2px solid black;
+                margin-left: auto;    /*centers the container*/
+                margin-right: auto;   /*centers the container*/
+                margin-top: 10px;
+                border-radius: 5px;
+                background-color: #ddd; /* Background color for the progress bar container */
+                height: 20px; /* Height of the progress bar container */
+            }
+                
+            #progress-bar {
+                width: 0%; /* Initial width of the progress bar */
+                background-color: #ffc107; 
+                height: 100%;  
+                transition: width 0.3s ease;  /* Smooth transition for width changes */
+            }
+            #profile-output {
+                border: 2px solid black;   
+                border-radius: 5px;
+                box-shadow: 0 12px 18px -3px rgba(255, 193, 7, 0.4), 0 6px 8px -2px rgba(255, 193, 7, 0.8);
+                padding: 10px;  /* Padding for content inside the div */
+                background-color:  rgba(255, 255, 255, 0.808);
+                width:50%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 40px;
+                font-weight: bolder; /* makes the text bold*/
+                font-size: larger;   /* increase the font size*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+        <!--Navigation Bar-->
+            <nav id="navbar">
+                <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+                <ul>
+                    <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+                    <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                    <li class="hover-effect"><a href="team.html">TEAM</a></li>
+                    <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                    <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+                    <li class="hover-effect active"><a href="profile.html">PROFILE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Scroll Up Button-->
+        <div id="scrollUpBtn" class="scroll-up-btn">
+            <img src="SVG/arrow-up-solid.svg" alt="Scroll Up">
+        </div>
+        <br><br><br><br><br><br><br><br>
+
+        <div class="container">
+            <div id="step1">
+                <div class="prompt">Welcome!<br><br> Step 1 | Please enter your name.</div>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <br>
+                <button class="nextButton" onclick="nextStep(event)"><span>Next</span></button>    
+            </div>
+                
+            <div id="step2" style="display: none;">
+                <div class="prompt">Step 1 | Please enter your surname.</div>
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="skipButton" onclick="skipStep()"><span>Skip</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step3" style="display: none;">
+                <div class="prompt">Step 1 | Please enter your Age.</div>
+                <label for="age">Age:</label>
+                <input type="number" id="age">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="skipButton" onclick="skipStep()"><span>Skip</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step4" style="display: none;">
+                <div class="prompt">Step 1 | Please select your gender.</div>
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="" label="Select Gender"></option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="skipButton" onclick="skipStep()"><span>Skip</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+                    
+            <div id="step5" style="display: none;">
+                <div class="prompt">Step 2 | Please enter your Area of Study.</div>
+                <label for="study">Area of Study:</label>
+                <input type="text" id="study">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step6" style="display: none;">
+                <div class="prompt">Step 2 | Please eneter your highest degree.</div>
+                <label for="degree">Degree:</label>
+                <select id="degree">
+                    <option value="" label="Select Degree"></option>
+                    <option value="bachelors">Bachelors</option>
+                    <option value="masters">Masters</option>
+                    <option value="phd">PhD</option>
+                </select>
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step7" style="display: none;">
+                <div class="prompt">Step 2 | Please enter year of completion.</div>
+                <label for="year">Year of complete:</label>
+                <input type="number" id="year">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="skipButton" onclick="skipStep()"><span>Skip</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step8" style="display: none;">
+                <div class="prompt">Step 2 | Please enter your university.</div>
+                <label for="university">University:</label>
+                <input type="text" id="university">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step9" style="display: none;">
+                <div class="prompt">Step 3 | Please select volunteering work.</div>
+                <label for="work">Work:</label>
+                <select id="work">
+                    <option value="" label="Select Work"></option>
+                    <option value="food bank">Food Bank</option>
+                    <option value="community gardening">Community Garden</option>
+                    <option value="food rescue">Food Rescue</option>
+                    <option value="meal program">Meal Program</option>
+                    <option value="research">Research</option>
+                </select>
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step10" style="display: none;">
+                <div class="prompt">Step 3 | Please select volunteering method.</div>
+                <label for="method">Method:</label>
+                <select id="method">
+                    <option value="" label="Select Method"></option>
+                    <option value="online">Online</option>
+                    <option value="onsite">Onsite</option>
+                </select>
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step11" style="display: none;">
+                <div class="prompt">Step 3 | Please enter country.</div>
+                <label for="country">Country:</label>
+                <input type="text" id="country">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="skipButton" onclick="skipStep()"><span>Skip</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step12" style="display: none;">
+                <div class="prompt">Step 4 | Volunteering hours per week.</div>
+                <label for="hours">Hours per week:</label>
+                <input type="number" id="hours">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step13" style="display: none;">
+                <div class="prompt">Step 4 | Please enter your Contact Number.</div>
+                <label for="contact">Contact No:</label>
+                <input type="text" id="contact" >
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="skipButton" onclick="skipStep()"><span>Skip</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Next</span></button>
+            </div>
+
+            <div id="step14" style="display: none;">
+                <div class="prompt">Step 4 | Please enter your email.</div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <br>
+                <button class="prevButton" onclick="prevStep()"><span>Previous</span></button>
+                <button class="nextButton" onclick="nextStep()"><span>Finish</span></button>
+            </div>
+
+            <div id="step15" style="display: none;">
+                <div class="prompt">
+                    <h4>100% Progress.</h4>
+                    <h2>Profile Completed.</h2>
+                </div>
+            </div>
+        </div>
+
+        <!--Progress bar-->
+        <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+        </div><br>
+
+        <!--Display Information-->
+        <div id="profile-output"></div>
+
+        <!--Footer-->
+        <footer>
+            <section class="footer-content">
+                <div class="footer-top">
+                <img class="logo" src="Images/logo.png" alt="logo">
+                <div class="website">
+                    <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+                </div>
+                <div class="page-editor">
+                    <p>Designed by <span><a href="editor-s3.html" target="_blank">Nisini</a></span></p>
+                </div>
+                <nav>
+                    <ul>
+                    <li class="hover-effect "><a href="gallery.html">GALLERY</a></li>
+                    <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                    <li class="hover-effect"><a href="team.html">TEAM</a></li>
+                    <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                    <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+                    <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+                    </ul>
+                </nav>
+                </div>
+                <div class="separator"></div>
+                <div class="footer-bottom">
+                <p>&copy; NUTRIZENITH</p>
+                <!--Socials-->
+                <ul class="socials">
+                    <li class="hover-social">
+                    <a href="https://www.facebook.com/SustDev" target="_blank"><img src="SVG/facebook.svg" alt="facebook"></a>
+                    </li>
+                    <li class="hover-social">
+                    <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="SVG/youtube.svg" alt="youtube"></a>
+                    </li>
+                    <li class="hover-social">
+                    <a href="https://twitter.com/SustDev" target="_blank"><img src="SVG/x-twitter.svg" alt="x-twitter"></a>
+                    </li>
+                    <li class="hover-social">
+                    <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="SVG/instagram.svg" alt="instagram"></a>
+                    </li>
+                </ul>
+                </div>
+            </section>
+        </footer>
+
+        <!--Script-->
+        <script>
+            window.addEventListener("scroll", function() {
+                var navbar = document.getElementById("navbar");
+            if (window.pageYOffset > 0) {
+                navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; // Adjust the transparency as needed
+            } else {
+                navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; // Initial color when at the top
+            }
+            });
+
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { 
+                scrollUpBtn.classList.add('show');
+                } else {
+                scrollUpBtn.classList.remove('show');
+                }
+            });
+            scrollUpBtn.addEventListener('click', () => {
+                window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+                });
+            });
+        </script>  
+        <script>
+            let currentStep = 1;  // current step of the process
+            const totalSteps = 15;  // total steps in the process
+            let sections = [
+                { start: 1, end: 4 },
+                { start: 5, end: 8 },
+                { start: 9, end: 11 },
+                { start: 12, end: 14 }
+            ];
+            let progressBar = document.getElementById('progress-bar');
+
+            function updateProgressBar() {
+                let completedSteps = currentStep - 1;
+                // Initialize the count 
+                let completedSections = 0;
+
+                for (let i = 0; i < sections.length; i++) {  
+                    // Check if the current step falls within the range of the section
+                    if (completedSteps >= sections[i].start && completedSteps <= sections[i].end) {
+                        // If the completed step is at the end of the section, increment completedSections
+                        if (completedSteps === sections[i].end) {
+                            completedSections++;
+                        }
+                        break;    // Break out of the loop since the section has been found
+                    } else if (completedSteps > sections[i].end) {
+                        completedSections++;
+                    }
+                }
+                // Calculate the width of the progress bar
+                progressBar.style.width = ((completedSections / sections.length) * 100) + '%'; 
+            }
+            function validateStep(step) {
+                const fieldIds = [
+                    "name", "surname", "age", "gender", "study",
+                    "degree", "year", "university", "work", "method",
+                    "country", "hours", "contact", "email"
+                ];
+                const fieldLabels = [
+                    "Name", "Surname", "Age", "Gender", "Area of Study",
+                    "Degree", "Completion Year", "University", "Work Area", "Work Method",
+                    "Country", "Work Hours", "Contact Number", "Email"
+                ];
+
+                const fieldValue = document.getElementById(fieldIds[step - 1]).value;  // check if the input is empty
+                if (fieldValue === "") {
+                    alert("Please enter your " + fieldLabels[step - 1]);
+                    return false;
+                }
+                if (fieldIds[step - 1] === "age" ||fieldIds[step - 1] === "hours" || fieldIds[step - 1] === "year"){
+                    // ckeck if the passed input is positive
+                    if (parseInt(fieldValue) <= 0) {
+                        alert("This field should be positive.");
+                        return false;
+                    }
+                }
+                if(fieldIds[step-1]==="name"||fieldIds[step-1]==="surname"||fieldIds[step-1]==="country"){
+                    //checks if the input is letters
+                    const validchar= /^[a-zA-Z ]*$/;
+                    if(!validchar.test(fieldValue)){
+                        alert("Enter letters only");
+                        return false;
+                    }
+                }
+                if (fieldIds[step-1]==="contact"){
+                    // check if the input for contact is valid
+                    if(parseInt(fieldValue) < 0||!/^\d+$/.test(fieldValue) ||fieldValue.length<10){
+                        alert("Input should be positive 10 digits");
+                        return false;
+                    }
+                }
+                if(fieldIds[step-1]==="email"){
+                    // checks if the input for email is valid
+                    const validformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                    if(!validformat.test(fieldValue)){
+                        alert("Enter a valid email");
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function displayProfile() {  // function to display the output as user inputs
+                const profileContainer = document.getElementById("profile-output");
+                profileContainer.innerHTML = ""; // Clear previous content
+                const fieldIds = [
+                    "name", "surname", "age", "gender", "study",
+                    "degree", "year", "university", "work", "method",
+                    "country", "hours", "contact", "email"
+                ];
+                const fieldLabels = [
+                    "Name", "Surname", "Age", "Gender", "Area of Study",
+                    "Degree", "Completion Year", "University", "Work Area", "Work Method",
+                    "Country", "Work Hours", "Contact Number", "Email"
+                ];
+
+                fieldIds.forEach((fieldId, index) => {
+                    // Retrieve the value of the field of currend id
+                    const value = document.getElementById(fieldId).value;
+                    if (value) {
+                        //Create a new paragraph to display the data if the value is not empty
+                        const p = document.createElement("p");
+                        p.textContent = fieldLabels[index] + ': ' + value;
+                        profileContainer.appendChild(p);  // Add the paragraph to the profileContainer
+                    }
+                });
+            }
+
+            function updateStepDisplay() {
+                document.querySelectorAll(".step").forEach(step => {
+                    step.style.display = "none";
+                });
+                document.getElementById('step' + currentStep).style.display = "block";
+            }
+
+            function nextStep() {
+                if (!validateStep(currentStep)) return;
+                displayProfile(); // Display profile information
+                
+                // Hide the previous step's prompt
+                document.getElementById('step' + currentStep).style.display = "none";
+
+                currentStep++;
+                updateProgressBar();  // updates the progress bar
+
+                if (currentStep > totalSteps) {
+                    alert("Profile completed!");
+                    return;
+                }
+                updateStepDisplay();  // calls the function to update dispaly
+            }
+
+            function prevStep() {
+                displayProfile();
+                // Hide the current step's prompt
+                document.getElementById('step' + currentStep).style.display = "none";
+
+                currentStep = Math.max(1, currentStep - 1); // decrement the current step by 1, prevents the step going below 1
+                updateStepDisplay();
+                updateProgressBar();
+            }
+
+            function skipStep() {
+                // Hide the previous step's prompt
+                document.getElementById('step' + currentStep).style.display = "none";
+
+                currentStep++;
+                updateProgressBar();
+                //  checks if the current step is bigger than total 
+                if (currentStep > totalSteps) {
+                    alert("Profile completed!");
+                    return;
+                }
+                updateStepDisplay();
+            }
+            // Initialize
+            document.addEventListener("DOMContentLoaded", () => {
+                updateStepDisplay();
+            });
+        </script>
+    </body>
+</html>

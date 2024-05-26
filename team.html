@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Page</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        
+        <!--CSS-->
+        <style>
+            main {
+                background-color: #f3f3f3;
+                padding: 138px 96px;   /* padding for the main section*/
+                text-align: center;
+            }  
+            main p {
+                font-size: 14px;
+            }
+
+            #topic {    
+                font-size: 36px;     /* Choosing the font size for topic*/
+                text-align: center;
+                position: relative;  /* Positioning of the topic*/
+                line-height: 70px;
+            }
+            /*Styles used for underlining topic*/
+            #topic::after {
+                content: '';
+                background: #ffc107;
+                width: 80px;
+                height: 5px;  /* Height of the line*/
+                border-radius: 5px;
+                position: absolute;
+                bottom: 0;    /*Bottom position*/
+                left: 50%;   /* Left position*/
+                transform: translateX(-50%);   /* Centers the line horizontaly*/
+            }
+            #about {
+                padding: 28px;
+                padding-bottom: 16px;
+            }
+            #topic h2 {
+                font-size: 20px;
+            }
+            .member-box {
+                margin-top: 32px;    /* Adjusting the top margin of memeber box*/
+                background: #0b0c0d;    /* Background color according to the website theme*/
+                padding: 8px;
+                border-radius: 8px;
+                line-height: 1.6;    /* Line height for member box*/
+                overflow: hidden;    /* Determines the overflow behavoir*/
+                position: relative;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 6px 7px -2px rgba(0, 0, 0, 0.9);
+            }
+
+            .team-container {
+                display: flex;  /* Flex display*/
+                justify-content: space-around;   /* Justify the content*/
+                flex-wrap: wrap;
+                margin:0 auto;
+            }
+            .member {
+                position: relative;
+                overflow: hidden;  /* Determines the overflow bwhavior*/
+                transition: transform 0.3s ease;   /* Transition for transform property*/
+            }
+            
+            .thumbnail {
+                width: 250px;
+                height: auto;   /* Height set to auto*/
+                display: block;
+                border-radius: 5px;   /* Radius of the border*/
+                transition: opacity 0.3s ease; /* Transition for opacity */
+            }
+            .member:hover {
+                transform: scale(1.1);  /* Zooms upon hovering using scale effect*/
+            }
+            .member:hover .thumbnail {
+                opacity: 0.6;   /* Reduced opacity on hover*/
+            }
+
+            .member-details {
+                display: none;   /* Hidden by default*/
+                position: absolute;  
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.8);   /* Background color with opacity*/
+                color: white;   /* Text color*/
+                padding: 10px;
+                border-radius: 5px;
+                text-align: center;   /* Align the text to center*/
+                width: 250px;
+            }    
+
+            .member:hover .member-details {
+                display: block;  /* Displays the detail on hover*/
+            }
+        </style>      
+    </head>
+
+    <body>
+        <!--Header section-->
+        <header>   
+            <nav id="navbar">
+                <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+                <ul>
+                    <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+                    <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                    <li class="hover-effect active"><a href="team.html">TEAM</a></li>
+                    <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                    <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+                    <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="scrollUpBtn" class="scroll-up-btn">   <!--Scroll-up button-->
+            <img src="Svg/arrow-up-solid.svg" alt="Scroll Up">
+        </div>
+
+        <main>
+            <h1 id="topic" style="font-size: 36px;">Team Details</h1>    <!--Introduction-->
+            <div id="about">
+                <h3>At Nutrizenith, we're passionate about ending hunger worldwide.<br>Our dedicated team is committed to promoting SDG Zero Hunger with a shared passion.</h3>
+            </div>
+
+            <!-- Section to create and display member details-->
+            <div class="team-container">
+                <div class="member-box">
+                    <div class="member" id="member1">
+                        <img src="Images/Aqil.png" alt="Aqil Sufi, Student1" class="thumbnail">
+                        <div class="member-details">
+                            <h2>Aqil</h2>
+                            <p>w2051806 | 20230979</p>
+                            <p>Role: Student 1</p>
+                            <p>Tasks: Splash screen | Shop</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-box">
+                    <div class="member" id="member2">
+                        <img src="Images/Thanushan.png" alt="Mayuran Thanushan, Student2" class="thumbnail">
+                        <div class="member-details">
+                            <h2>Thanushan</h2>
+                            <p>w2051815 | 20231047</p>
+                            <p>Role: Student 2</p>
+                            <p>Tasks: Homepage | Feedback</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="member-box">
+                    <div class="member" id="member3">
+                        <img src="Images/Nisini.png" alt=" Agampodi Nisini, Student3" class="thumbnail">
+                        <div class="member-details">
+                            <h2>Nisini</h2>
+                            <p>w2051818 | 20231060</p>
+                            <p>Role: Student 3</p>
+                            <p>Tasks: User Profile | Team</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="member-box">
+                    <div class="member" id="member4">
+                        <img src="Images/Shilma.png" alt="Fathima Shilma, Student4" class="thumbnail">
+                        <div class="member-details">
+                            <h2>Shilma</h2>
+                            <p>w2051794 | 20230871</p>
+                            <p>Role: Student 4</p>
+                            <p>Tasks: Gallery | Sitemap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--Footer section-->
+        <footer>
+            <section class="footer-content">
+                <div class="footer-top">
+                <img class="logo" src="Images/logo.png" alt="logo">
+                <div class="website">
+                    <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+                </div>
+                <div class="page-editor">
+                    <p>Designed by <span><a href="editor-s3.html" target="_blank">Nisini</a></span></p>
+                </div>
+                <!--Links for navigation-->
+                <nav>
+                    <ul>   
+                    <li class="hover-effect "><a href="gallery.html">GALLERY</a></li>
+                    <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                    <li class="hover-effect"><a href="team.html">TEAM</a></li>
+                    <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                    <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+                    <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+                    </ul>
+                </nav>
+                </div>
+                <div class="separator"></div>
+                <div class="footer-bottom">
+                    <p>&copy; NUTRIZENITH</p>
+                    <!--Links for social media-->
+                    <ul class="socials">
+                        <li class="hover-social">
+                        <a href="https://www.facebook.com/SustDev" target="_blank"><img src="Svg/facebook.svg" alt="facebook"></a>
+                        </li>
+                        <li class="hover-social">
+                        <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="Svg/youtube.svg" alt="youtube"></a>
+                        </li>
+                        <li class="hover-social">
+                        <a href="https://twitter.com/SustDev" target="_blank"><img src="Svg/x-twitter.svg" alt="x-twitter"></a>
+                        </li>
+                        <li class="hover-social">
+                        <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="Svg/instagram.svg" alt="instagram"></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
+
+        <!--Script-->
+        <script>
+            window.addEventListener("scroll", function() {
+                var navbar = document.getElementById("navbar");
+                if (window.pageYOffset > 0) {
+                    navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                } else {
+                    navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; 
+                }
+            });
+
+            const scrollUpBtn = document.getElementById('scrollUpBtn');  /* Shows scroll up button at bottom*/
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                scrollUpBtn.classList.add('show');
+                } else {
+                scrollUpBtn.classList.remove('show');
+                }
+            });
+
+            /* Scrolls to top when clicked*/
+            scrollUpBtn.addEventListener('click', () => {
+                window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+                });
+            });
+        </script>     
+    </body>
+</html>

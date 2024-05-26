@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap</title>
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        
+body{
+    background-color: #f3f3f3;    
+    
+}
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers (e.g., Chrome, Safari) */
+}
+
+/*Styling for elements with class 'top1'*/
+.top1{
+    padding-top: 140px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+    #topic {    
+        font-size: 36px;     /* Choosing the font size for topic*/
+        text-align: center;
+        position: relative;  /* Positioning of the topic*/
+        line-height: 70px;
+    }
+    /*Styles used for underlining topic*/
+    #topic::after {
+        content: '';
+        background: #ffc107;
+        width: 80px;
+        height: 5px;  /* Height of the line*/
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;    /*Bottom position*/
+        left: 50%;   /* Left position*/
+        transform: translateX(-50%);   /* Centers the line horizontaly*/
+    }
+/*Styling for the SVG element with ID 'svgJS'*/
+#svgJS {
+    width: 95%; /* Make the SVG element take up 100% of its container's width */
+    height: auto; /* Allow the height to adjust proportionally */
+}
+
+/*Styling the text elements within the SVG*/
+#svgJS text{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/*Styling for text elememts within 'g' elememts within the SVG*/
+#svgJS g text{
+    font-size: 16px;
+
+}
+/*Styling for 'rec' elements within 'g' elements within the SVG*/
+#svgJS g rect{
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+
+}
+/*Hover effect for text elements within 'g' elements within the SVG */
+#svgJS g:hover text{
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /*Adding smooth transition for all properties*/
+
+}
+
+/*Hover effect for 'rect' elements within 'g' elements within the SVG */
+#svgJS g:hover rect,
+#svgJS g:focus rect{   /*Gains focus by user interactio such as keyboard navigation*/
+    fill: #ffc107;
+    stroke: black;
+    stroke-width: 3;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+    </style>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <!--Navigation Bar-->
+        <nav id="navbar">
+          <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+            <ul>
+              <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+              <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+              <li class="hover-effect"><a href="team.html">TEAM</a></li>
+              <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+              <li class="hover-effect active"><a href="sitemap.html">SITEMAP</a></li>
+              <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Scroll Up Button-->
+    <div id="scrollUpBtn" class="scroll-up-btn">
+      <img src="Svg/arrow-up-solid.svg" alt="Scroll Up">
+    </div>
+
+
+    <div class="top1">
+        <h1 id="topic">Sitemap</h1><!--Main heading-->
+    </div>
+    <svg id="svgJS" width = "950" height = "950" viewBox="0 0 1050 1050" >
+        <!--Group1-->
+        <g id="group1">
+            <!--Rectangular shape-->
+            <rect x = "380" y = "60" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <!--Polyline shape-->
+            <polyline points="447,172 455,185 463,172" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+
+            <!--Text element-->
+            <text fill="#fff" x="450" y="90" text-anchor="middle">Splash Screen</text>
+           
+            <!--Line element-->
+            <line x1="455" y1="115" x2="455" y2="185" stroke="#ffc107" stroke-width="2"></line>
+        </g>
+        <g id="group2">
+            <!--Rectangular shape-->
+            <rect x = "380" y = "185" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="3"/>
+            <!--Polyline shape-->
+            <polyline points="447,298 455,310 463,298" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+             <!--Text element-->
+            <text fill="#fff" x="450" y="215" text-anchor="middle">Home Page</text>
+            <!--Line elements-->
+            <line x1="455" y1="240" x2="455" y2="310" stroke="#ffc107" stroke-width="2"></line>
+            <line x1="380" y1="215" x2="310" y2="215" stroke="#ffc107" stroke-width="2"></line>
+        </g>
+        <g id="group3">
+        <!--The same rectangular,polyline,text and line shapes will be implemented for the rest of the groups-->    
+            <rect x = "380" y = "310" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="450" y="340" text-anchor="middle">Content Page</text>
+            <line x1="455" y1="365" x2="455" y2="435" stroke="#ffc107" stroke-width="2"></line>
+            <line x1="325" y1="435" x2="595" y2="435" stroke="#ffc107" stroke-width="2"></line>
+
+            <line x1="325" y1="435" x2="325" y2="475" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="318,465 325,475 332,465" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+
+            <line x1="415" y1="435" x2="415" y2="475" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="407,465 415,475 422,465" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            
+            <line x1="505" y1="435" x2="505" y2="475" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="498,465 505,475 512,465" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            
+            <line x1="595" y1="435" x2="595" y2="475" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="588,465 595,475 602,465" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+        </g>
+        <g id="group4">
+            <rect x="300" y = "475" width="50" height="50"  rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff"  x="325" y="505" text-anchor="middle">St-1</text>
+        </g>
+        <g id="group5">
+            <rect x="390" y = "475" width="50" height="50" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="413" y="505"  text-anchor="middle">St-2</text>
+        </g>
+        
+        <g id="group6">
+            <rect x="480" y = "475" width="50" height="50" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="503" y="505"  text-anchor="middle">St-3</text>
+        </g>
+        <g id="group7">
+            <rect x="570" y = "475" width="50" height="50" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="595" y="505"  text-anchor="middle">St-4</text>
+        </g>    
+        <g id="group8">
+            <rect x = "90" y = "65" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="160" y="95" text-anchor="middle">User Profile</text>
+
+            <line x1="310" y1="215" x2="310" y2="95" stroke="#ffc107" stroke-width="2"></line>
+            
+
+            <line x1="310" y1="95" x2="240" y2="95" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="250,88 240,95 250,102" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            
+            
+            <line x1="310" y1="215" x2="240" y2="215" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="250,208 240,215 250,222" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+        </g>
+
+        <g id="group9">
+            <rect x = "90" y = "185" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="160" y="215" text-anchor="middle">Feedback</text>
+            <line x1="310" y1="215" x2="310" y2="335" stroke="#ffc107" stroke-width="2"></line>
+           
+        </g>
+
+        <g id="group10">
+            <line x1="310" y1="335" x2="240" y2="335" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="250,328 240,335 250,342" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <rect x="90" y = "305" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="160" y="335" text-anchor="middle">Shop</text>
+        </g>
+        <g>
+            <line x1="530" y1="215" x2="670" y2="215" stroke="#ffc107" stroke-width="2"></line>
+            <line x1="670" y1="295" x2="670" y2="135" stroke="#ffc107" stroke-width="2"></line>
+        </g>
+
+        <g id="group11">
+            <line x1="670" y1="135" x2="740" y2="135" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="730,128 740,135 730,142" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <rect x="740" y = "108" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff"  x="810" y="138" text-anchor="middle">Gallery</text>
+        </g>
+
+        <g id="group12">
+            <line x1="670" y1="295" x2="740" y2="295" stroke="#ffc107" stroke-width="2"></line>
+            <rect x="740" y = "268" width="150" height="55" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <polyline points="730,288 740,295 730,302" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <text fill="#fff" x="810" y="298" text-anchor="middle">Team</text>
+        </g>
+
+        <g id="group13">
+            <line x1="790" y1="323" x2="790" y2="604" stroke="#ffc107" stroke-width="2"></line>
+            <line x1="790" y1="393" x2="865" y2="393" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="855,386 865,393 855,400" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <rect x="865" y = "368" width="170" height="45" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="949" y="395" text-anchor="middle">Aqil's Editor</text>
+
+        </g>
+        <g id="group14">
+            <line x1="790" y1="463" x2="865" y2="463" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="855,456 865,463 855,470" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <rect x="865" y = "438" width="170" height="45" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="950" y="465" text-anchor="middle">Thanushan's Editor</text>
+        </g>
+
+        <g id="group15">
+            <line x1="790" y1="533" x2="865" y2="533" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="855,526 865,533 855,540" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <rect x="865" y = "513" width="170" height="45" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="950" y="540" text-anchor="middle">Nisini's Editor</text>
+        </g>
+        <g id="group16">
+            <line x1="790" y1="603" x2="865" y2="603" stroke="#ffc107" stroke-width="2"></line>
+            <polyline points="855,596 865,603 855,610" stroke="#ffc107" stroke-width="2" fill="none"></polyline>
+            <rect x="865" y = "583" width="170" height="45" rx="10" ry="10" fill = "#0b0c0d" stroke = "#ffc107"  stroke-width="2"/>
+            <text fill="#fff" x="950" y="610" text-anchor="middle">Shilma's Editor</text>
+        </g>
+        
+    </svg>
+    <!--Footer-->
+    <footer>
+        <section class="footer-content">
+          <div class="footer-top">
+            <img class="logo" src="Images/logo.png" alt="logo">
+            <div class="website">
+              <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+            </div>
+            <div class="page-editor">
+              <p>Designed by <span><a href="editor-s4.html" target="_blank">Shilma</a></span></p>
+            </div>
+            <nav>
+              <ul>
+                <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+                <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+                <li class="hover-effect"><a href="team.html">TEAM</a></li>
+                <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+                <li class="hover-effect"><a href="Sitemap.html">SITEMAP</a></li>
+                <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="separator"></div>
+        <div class="footer-bottom">
+          <p>&copy; NUTRIZENITH</p>
+          <!--Socials-->
+          <ul class="socials">
+            <li class="hover-social">
+              <a href="https://www.facebook.com/SustDev" target="_blank"><img src="Svg/facebook.svg" alt="facebook"></a>
+            </li>
+            <li class="hover-social">
+              <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="Svg/youtube.svg" alt="youtube"></a>
+            </li>
+            <li class="hover-social">
+              <a href="https://twitter.com/SustDev" target="_blank"><img src="Svg/x-twitter.svg" alt="x-twitter"></a>
+            </li>
+            <li class="hover-social">
+              <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="Svg/instagram.svg" alt="instagram"></a>
+            </li>
+          </ul>
+        </div>
+    </section>
+      </footer>   
+
+      <!--Script-->
+<script>
+    window.addEventListener("scroll", function() {
+      var navbar = document.getElementById("navbar");
+      if (window.pageYOffset > 0) {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; 
+      } else {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; 
+      }
+  });
+  
+  const scrollUpBtn = document.getElementById('scrollUpBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { 
+      scrollUpBtn.classList.add('show');
+    } else {
+      scrollUpBtn.classList.remove('show');
+    }
+  });
+  scrollUpBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
+  
+    <!--Script to handle the click events-->
+    <script>
+        //JavaScript click event listeners for each group
+            document.getElementById("group1"). addEventListener("click",function(){
+                document.location.href="splash.html";
+            });
+    
+            document.getElementById("group2").addEventListener("click",function(){
+                document.location.href="home.html";
+            });
+    
+            document.getElementById("group3").addEventListener("click",function(){
+                document.location.href="content-s4.html";
+            });
+    
+            document.getElementById("group4").addEventListener("click",function(){
+                document.location.href="content-S1.html";
+            });
+    
+            document.getElementById("group5").addEventListener("click",function(){
+                document.location.href="content-S2.html";
+            });
+    
+            document.getElementById("group6").addEventListener("click",function(){
+                document.location.href="content-S3.html";
+            });
+    
+            document.getElementById("group7").addEventListener("click",function(){
+                document.location.href="content-S4.html";
+            });
+    
+            document.getElementById("group8").addEventListener("click",function(){
+                document.location.href="profile.html";
+            });
+    
+            document.getElementById("group9").addEventListener("click",function(){
+                document.location.href="feedback.html";
+            });
+    
+            document.getElementById("group10").addEventListener("click",function(){
+                document.location.href="shop.html";
+            });
+    
+            document.getElementById("group11").addEventListener("click",function(){
+                document.location.href="gallery.html";
+            });
+    
+            document.getElementById("group12").addEventListener("click",function(){
+                document.location.href="team.html";
+            });
+    
+            document.getElementById("group13").addEventListener("click",function(){
+                document.location.href="editor-s1.html";
+            });
+    
+            document.getElementById("group14").addEventListener("click",function(){
+                document.location.href="editor-s2.html";
+            });
+    
+            document.getElementById("group15").addEventListener("click",function(){
+                document.location.href="editor-s3.html";
+            });
+    
+            document.getElementById("group16").addEventListener("click",function(){
+                document.location.href="editor-s4.html";
+            });
+    </script>
+    
+    
+</body> 
+</html>

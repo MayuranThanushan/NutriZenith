@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Home</title>
+
+    <style>
+      /* Cover Image */
+      .cover {
+        background-color: #0b0c0d;
+        border-bottom: 5px solid #ffc107;
+      }
+      .cover img {
+        padding-top: 35px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    
+    
+      /* Introduction */
+      .introduction {
+        display: flex;
+        align-items: center;
+        padding: 120px 66px;
+        flex-direction: column;
+        background-color: #f3f3f3;
+      }
+      .introduction h1 {
+        color: #000000;
+        height: 100px;
+      }
+      .introduction p {
+        color: #000000;
+        width: auto;
+        line-height: 28px;
+      }
+    
+    
+      /* Numbers */
+      .numbers {
+        display: grid;
+        grid-gap: 60px;
+        padding: 36px 18px;
+        background-color: #0b0c0d;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      .numbers .stat {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .stat img {
+        margin-bottom: 24px;
+      }
+      .stat h1 {
+        color: #ffc107;
+        font-size: 38px;
+        text-align: center;
+      }
+      .stat p {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 8px;
+        text-align: center;
+        text-transform: capitalize;
+      }
+    
+    
+      /* initiative & Innovation */
+      .initiative, .innovation {
+        display: flex;
+        padding: 66px;
+        background-color: #f3f3f3;
+      }
+      .innovation {
+        border-top: 1.5px solid #ffc107;
+      }
+      .initiative .box, .innovation .box {
+        display: flex;
+        align-items: center;
+        gap: 140px;
+      }
+      .box .paragraph {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+      }
+      .content-image {
+        width: 670px;
+        height: 446px;
+      }
+      .paragraph h1 {
+        color: #000000;
+        margin-bottom: 16px;
+      }
+      h2 {
+        color: #ffc107;
+      }
+      .paragraph p {
+        color: #000000;
+      }
+    
+    
+     /* Content Gallery */
+      .content-gallery {
+        background-color: #0b0c0d;
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        padding: 48px;
+      }
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
+      .grid1, .grid2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .group {
+        margin: 3% 6%;
+        width: 38%;
+        position: relative;
+      }
+      .card {
+        font-size: 12px;
+        line-height: 2;
+        border-radius: 28px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+      }
+      .card img {
+        border-radius: 28px;
+        transition: transform 0.2s ease-in-out;
+        width: 100%;
+        height: auto;
+      }
+      .card:hover {
+        border: 4px solid #ffc107;
+        opacity: 0.8
+      }
+      .card:hover img {
+        transform: scale(1.1);
+      }
+      .text-overlay {
+        position: absolute;
+        width: 100%;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+        padding: 10px;
+        padding-left: 40px;
+        color: #fff;
+        z-index: 1;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            
+      }
+      .text-overlay h1 {
+        line-height: 36px;
+        font-size: 23px;
+        font-weight: 900;
+        margin: 0;
+      }
+      .text-overlay p {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+      }
+      
+    
+      /* Gallery */
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 10%;
+        background-color: #f3f3f3;
+      }
+      .gallery .grid {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        border: 5px solid #ffc107;
+        margin: 66px 0;
+      }
+      .grid img {
+        margin: 1px;
+        width: 100%;
+        height: 100%;
+      }
+      .img-1x2 {
+        grid-row-end: span 2;
+        grid-column-end: span 1;
+      }
+      .img-3x2 {
+        grid-row-end: span 2;
+        grid-column-end: span 3;
+      }
+      .img-2x2 {
+        grid-row-end: span 2;
+        grid-column-end: span 2;
+      }
+    
+    
+      /* Shop */
+      .shop {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('Images/shop-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 56px;
+      }
+      .shop-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        max-width: 500px;
+        margin: 0px auto;
+        padding-bottom: 24px;
+        box-shadow: 0px 0px 30px 2px #000;
+        align-items: center;
+      }
+      .header img {
+       width: 100%;
+      }
+      .topic {
+        color: #000;
+        text-align: center;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin: 10px 30px;
+      }
+      .info {
+        text-align: center;
+        margin: 40px;
+      }
+    
+    
+      /* Feedback */
+      .feedback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 66px;
+        gap: 80px;
+        background-color: #f3f3f3;
+      }
+      .feedback .contain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contain h1 {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+    
+      /* Media */
+      @media (max-width: 1240px) {
+        .box {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          gap: 40px;
+        }
+    
+        .content-image {
+          width: auto;
+          height: auto;
+        }
+    
+        .paragraph {
+          width: 670px;
+        }
+      }
+      @media (max-width: 1410px) {
+        .text-overlay h1 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        .text-overlay p {
+          font-size: 18px;
+        }
+      }
+      @media (max-width: 1260px) {
+        .text-overlay h1 {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        .text-overlay p {
+          font-size: 8px;
+        }
+      }
+      @media (max-width: 800px) {
+        .page {
+          padding: 0 30px;
+        }
+        .content-image {
+          width: 100%; 
+          height: auto; 
+        }
+        .numbers {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+      } 
+    
+    </style>
+</head>
+<body>
+  <!--Header-->
+    <header>
+        <!--Navigation Bar-->
+        <nav id="navbar">
+          <a href="home.html" ><img class="logo" src="Images/logo.png" alt="logo"></a>
+            <ul>
+              <li class="hover-effect"><a href="gallery.html">GALLERY</a></li>
+              <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+              <li class="hover-effect"><a href="team.html">TEAM</a></li>
+              <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+              <li class="hover-effect"><a href="sitemap.html">SITEMAP</a></li>
+              <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Scroll Up Button-->
+    <div id="scrollUpBtn" class="scroll-up-btn">
+      <img src="Svg/arrow-up-solid.svg" alt="Scroll Up">
+    </div>
+
+    <main>
+
+
+      <!-- Cover Image-->
+      <section class="cover">
+        <img src="Images/cover.png" alt="cover">
+      </section>
+
+
+      <!--Introduction-->
+      <section class="introduction">
+        <h1>Fueling a Hunger-Free Tomorrow</h1>
+        <p>Welcome to <strong>NutriZenith</strong>, where we're on a mission to achieve the United Nations' Zero Hunger goal. Our focus is on promoting sustainable nutrition practices and ensuring access to nutritious food for everyone. Through advocacy, education, and community engagement, we strive to address the root causes of hunger and build a healthier future.</p>
+        <br>
+        <p>At <strong>NutriZenith</strong>, we believe in the power of sustainable food systems to end hunger. We work closely with farmers, policymakers, and local communities to promote sustainable agriculture, reduce food waste, and improve food distribution channels. By supporting ethical food production and consumption, we aim to create a more equitable and nourished world.</p>
+        <br>
+        <p>Join us in our journey towards a hunger-free planet. Explore our resources, participate in our initiatives, and be part of the solution. Together, we can make a difference and ensure that no one goes to bed hungry.</p>
+      </section>
+      
+
+      <!--Numbers-->
+      <section class="numbers">
+        <div class="stat">
+          <img src="Svg/earth-asia-solid.svg" alt="Globe">
+          <h1>600 Million +</h1>
+          <p>People Are Projected To Face Hunger In 2030</p>
+        </div>
+        <div class="stat">
+          <img src="Svg/sack-dollar-solid.svg" alt="Money">
+          <h1>$30 Billion +</h1>
+          <p>Needed To Achieve Zero Hunger By 2030</p>
+        </div>
+        <div class="stat">
+          <img src="Svg/people-group-solid.svg" alt="Population">
+          <h1>Approx. 25%</h1>
+          <p>People Suffer From Micronutrient Deficiencies</p>
+        </div>
+        <div class="stat">
+          <img src="Svg/bowl-food-solid.svg" alt="Food">
+          <h1>1.3 Billion</h1>
+          <p>Food Wasted Globally Every Year</p>
+        </div>
+      </section>
+
+
+      <!--initiative-->
+      <section class="initiative">
+        <div class="box">
+          <div class="paragraph">
+            <h2>From Farm to Table, Making Every Bite Count</h2>
+            <h1>Empowering Change: Our Initiatives</h1>
+            <p><strong>NutriZenith's</strong> initiatives are at the forefront of creating meaningful change in the fight against hunger and malnutrition. From sustainable agriculture programs to food distribution initiatives, we are actively engaged in projects that make a difference in people's lives.</p>
+            <p>Our flagship project <strong>"NutriGrow"</strong> empowers farmers with sustainable techniques, enhancing crop yields and food security. Complemented by food banks and nutrition centers for vulnerable communities, our initiatives address key food challenges. Through ongoing campaigns and events, we inspire action for sustainable nutrition practices. Collaborating with partners, we envision a future where hunger is a thing of the past.</p>
+          </div>
+          <img class="content-image" src="Images/initiative.jpg" alt="Agriculture">
+        </div>
+      </section>
+
+
+      <!--Innovation-->
+      <section class="innovation">
+        <div class="box">
+          <img class="content-image" src="Images/innovation.jpg" alt="img2">
+          <div class="paragraph">
+            <h2>Pioneering Solutions for a Hunger-Free Future</h2>
+            <h1>Driving Impact: Innovation and Progress</h1>
+            <p>At <strong>NutriZenith</strong>, we are committed to pushing the boundaries of innovation in the fight against hunger. Our focus on sustainable nutrition practices, food security, and community empowerment drives us to explore new avenues and pioneer impactful solutions.</p>
+            <p>Explore <strong>NutriZenith's</strong> leadership in implementing cutting-edge technologies and strategies to combat food insecurity. From leveraging data analytics for optimized food distribution to collaborating with research institutions for agricultural breakthroughs, we drive continuous progress. Join us in celebrating innovation and progress towards a world free from hunger. Together, let's harness innovation's power for lasting change across generations.</p>
+          </div>
+        </div>
+      </section>
+
+
+       <!--Content Gallery-->
+       <section class="content-gallery" id="content-gallery">
+        <div class="content-container">
+            <h1>Read our Contents</h1>
+            <div class="grid1">
+            <div class="group">
+                <a href="content-S1.html">
+                  <div class="card">
+                    <div class="text-overlay">
+                        <h1>Understanding Zero Hunger: <br>A Call to Action</h1>
+                        <p>By Aqil</p>
+                    </div>
+                        <img src="Images/content-s1.jpg" alt="content-S1">
+                  </div>
+                </a>
+            </div>
+
+            <div class="group">
+              <a href="content-S2.html">
+                <div class="card">
+                  <div class="text-overlay">
+                      <h1> Our Journey towards Zero Hunger:<br> Past Initiatives and Achievements</h1>
+                      <p>By Thanushan</p>
+                  </div>
+                      <img src="Images/content-s2.jpg" alt="content-S2">
+                </div>
+              </a>
+            </div>
+          </div>
+
+            <div class="grid2">
+            <div class="group">
+                <a href="content-S3.html">
+                  <div class="card">
+                    <div class="text-overlay">
+                        <h1>Shaping the Future of Food Security: <br> UN's Vision and Our Role
+                        </h1>
+                        <p>By Nisini</p>
+                      </div>
+                        <img src="Images/content-s3.jpg" alt="content-s3">
+                  </div>
+                </a>
+            </div>
+
+          <div class="group">
+            <a href="content-S4.html">
+              <div class="card">
+                <div class="text-overlay">
+                    <h1>Innovative Approaches and Technologies: <br> Advancing Sustainable Agriculture</h1>
+                    <p>By Shilma</p>
+                  </div>
+                    <img src="Images/content-s4.jpg" alt="content-s4">
+              </div>
+            </a>
+          </div>
+          </div>        
+        </div>
+      </section>
+      
+
+      <!--Gallery-->
+      <section class="gallery">
+        <h1>Explore Our Gallery</h1>
+        <div class="grid">
+          <img class="img-2x2" src="Images/img-2x2.jpg" alt="Sad child">
+          <img class="img-2x2" src="Images/img1-2x2.jpg" alt="Happy children">
+          <img class="img-3x2" src="Images/img-3x2.jpg" alt="Volunteer">
+          <img class="img-1x2" src="Images/img-1x2.jpg" alt="Charity">
+        </div>
+        <a href="gallery.html">
+          <button><span>Explore Gallery</span></button>
+        </a>
+      </section>
+
+
+      <!--Shop-->
+      <section class="shop">
+      <div class="shop-card">
+        <div class="header">
+        <img src="Images/shop.jpg" alt="Poor children">
+       </div>
+        <div class="text">
+           <h1 class="topic">Shop for a Cause: <br> End Hunger Now</h1>
+           <p class="info">Explore our collection of fundraising products that support our mission to end hunger. Every purchase contributes to sustainable initiatives and brings us closer to achieving Zero Hunger globally. Join us in making a difference.</p>
+        </div>
+        <a href="shop.html">
+          <button><span>Shop Now</span></button>
+        </a>
+      </div>
+      </section>
+
+
+      <!--Feedback-->
+      <section class="feedback">
+        <div class="contain">
+          <h1>Your Feedback Matters</h1>
+          <p>At <strong>NutriZenith</strong>, we believe in the power of feedback to drive positive change. Your opinions and ideas matter greatly to us as we strive to make a meaningful impact in the fight against hunger. Whether you have suggestions for improvement, success stories to share, or questions about our initiatives, we are eager to hear from you.</p>
+          <br>
+          <p>Your feedback not only helps us refine our programs but also inspires and motivates us to do more. Together, let's create a world where no one goes hungry. Take a moment to share your thoughts, and thank you for being a vital part of our mission.</p>
+        </div>
+        <a href="feedback.html">
+          <button><span>Feedback Form</span></button>
+        </a>
+      </section>
+    </main>
+
+
+    <!--Footer-->
+    <footer>
+      <section class="footer-content">
+        <div class="footer-top">
+          <img class="logo" src="Images/logo.png" alt="logo">
+          <div class="website">
+            <p>For more infomation <span><a href="https://sdgs.un.org/goals/goal2">click here</a></span></p>
+          </div>
+          <div class="page-editor">
+            <p>Designed by <span><a href="editor-s2.html" target="_blank">Thanushan</a></span></p>
+          </div>
+          <nav>
+            <ul>
+              <li class="hover-effect "><a href="gallery.html">GALLERY</a></li>
+              <li class="hover-effect"><a href="shop.html">SHOP</a></li>
+              <li class="hover-effect"><a href="team.html">TEAM</a></li>
+              <li class="hover-effect"><a href="feedback.html">FEEDBACK</a></li>
+              <li class="hover-effect"><a href="Sitemap.html">SITEMAP</a></li>
+              <li class="hover-effect"><a href="profile.html">PROFILE</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="separator"></div>
+      <div class="footer-bottom">
+        <p>&copy; NUTRIZENITH</p>
+        <!--Socials-->
+        <ul class="socials">
+          <li class="hover-social">
+            <a href="https://www.facebook.com/SustDev" target="_blank"><img src="Svg/facebook.svg" alt="facebook"></a>
+          </li>
+          <li class="hover-social">
+            <a href="https://www.youtube.com/user/uncsd2012/featured" target="_blank"><img src="Svg/youtube.svg" alt="youtube"></a>
+          </li>
+          <li class="hover-social">
+            <a href="https://twitter.com/SustDev" target="_blank"><img src="Svg/x-twitter.svg" alt="x-twitter"></a>
+          </li>
+          <li class="hover-social">
+            <a href="https://www.instagram.com/sdgaction/?next=%2Funarcoirisllenode%2Ffeed%2F&hl=nb" target="_blank"><img src="Svg/instagram.svg" alt="instagram"></a>
+          </li>
+        </ul>
+      </div>
+  </section>
+    </footer>
+
+
+<!--Script-->
+<script>
+  window.addEventListener("scroll", function() {
+    var navbar = document.getElementById("navbar");
+    if (window.pageYOffset > 0) {
+        navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; 
+    } else {
+        navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; 
+    }
+});
+
+const scrollUpBtn = document.getElementById('scrollUpBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { 
+    scrollUpBtn.classList.add('show');
+  } else {
+    scrollUpBtn.classList.remove('show');
+  }
+});
+scrollUpBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+</script>
+
+
+</body>
+</html>
